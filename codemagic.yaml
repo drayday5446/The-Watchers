@@ -16,6 +16,7 @@ workflows:
       - name: Create Gradle wrapper
         script: |
           mkdir -p /tmp/wrap && cd /tmp/wrap
+          touch settings.gradle
           gradle wrapper --gradle-version 8.7 --distribution-type bin
           cp -r gradle gradlew gradlew.bat "$CM_BUILD_DIR/src"/
           chmod +x "$CM_BUILD_DIR/src/gradlew"
